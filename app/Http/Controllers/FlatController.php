@@ -16,6 +16,6 @@ class FlatController extends Controller
 
     public function all(Request $request)
     {
-        return $this->model->with(['attributes', 'relationships'])->simplePaginate(8);
+        return $this->model->with(['attributes', 'relationships'])->paginate(8);
     }
 }
