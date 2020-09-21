@@ -27,11 +27,17 @@ class AttributeFactory extends Factory
         $address = Address::factory()->create();
 
         return [
-            'title' => $rooms . ' rooms on ' . $address->street,
+            'title' => $this->getTitle($rooms, $address->street),
             'rooms' => $rooms,
             'address_id' => $address->id,
             'area' => $this->faker->numberBetween(40, 200),
             'unit' => $this->faker->randomElement(['square metres', 'square yards']),
         ];
+    }
+
+    private function getTitle($rooms, $address) {
+        $roomsText = $rooms === 1? 'room' : 'rooms';
+
+        return "$rooms $roomsText on $address";
     }
 }
