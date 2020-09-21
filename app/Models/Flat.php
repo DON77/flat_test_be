@@ -10,6 +10,7 @@ class Flat extends Model
     use HasFactory;
 
     protected $guarded = [];
+    public $timestamps = false;
 
     public function attributes() {
         return $this->belongsTo(Attribute::class, 'attribute_id');

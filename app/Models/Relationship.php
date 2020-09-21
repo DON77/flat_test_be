@@ -9,6 +9,8 @@ class Relationship extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     public function getAttributesAttribute() {
         $this["attributes"] = [
           'first_name' => $this->first_name,
