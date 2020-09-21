@@ -31,6 +31,7 @@ class FlatController extends Controller
                         $flat->favorite = $user->id === Auth::id();
                     }
                 }
+                $flat->unsetRelation('users');
             });
         }
 
