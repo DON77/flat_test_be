@@ -10,7 +10,12 @@ class Attribute extends Model
     use HasFactory;
 
     protected $guarded = [];
+
     public $timestamps = false;
+
+    protected $hidden = [
+      'id'
+    ];
 
     public function address() {
         return $this->hasOne(Address::class);

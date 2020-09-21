@@ -6,7 +6,6 @@ use App\Models\Attribute;
 use App\Models\Flat;
 use App\Models\Relationship;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
 
 class FlatFactory extends Factory
 {
