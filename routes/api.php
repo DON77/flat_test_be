@@ -21,6 +21,8 @@ Route::post('register', [JwtAuthController::class, 'register']);
 
 Route::group(['middleware' => 'auth.jwt'], function () {
     Route::get('logout', [JwtAuthController::class, 'logout']);
+    Route::get('flats', [FlatController::class, 'all']);
+    Route::post('flats/{id}/favorite', [FlatController::class, 'favorite']);
+    Route::post('flats/{id}/unfavorite', [FlatController::class, 'unfavorite']);
 });
 
-Route::get('flats', [FlatController::class, 'all']);

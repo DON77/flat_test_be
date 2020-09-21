@@ -19,4 +19,8 @@ class Flat extends Model
     public function relationships() {
         return $this->belongsTo(Relationship::class, 'relationship_id');
     }
+
+    public function users() {
+        return $this->belongsToMany(User::class, 'user_flat');
+    }
 }
